@@ -10,7 +10,5 @@ router.patch('/:id', editLocation);
 router.get('/location', getAllLocation);
 router.get('/:id', specificLocation);
 
-router.post('/f', getMyLocation);
-
 module.exports = router;
 

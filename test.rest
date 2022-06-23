@@ -1,4 +1,4 @@
-GET http://localhost:3000/location
+POST http://localhost:3000/distance/62b44639d33150c84c48f9ab
 Content-Type: application/json
 
 # {

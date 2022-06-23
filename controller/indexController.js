@@ -1,7 +1,6 @@
 const {registerModel} =  require('../model/registerModel');
 const {solveDistance} = require('../utilities/distances');
 const {getMyLocation} = require('../utilities/externalapi');
-const fetch = require("node-fetch");
 
 
 
@@ -26,11 +25,11 @@ function register(req, res){
 async function distance(req, res){
     const location = await registerModel.findById(req.params.id);
     const coordinateOne = location.clientCoordinate;
-    const coordinateTwo = await getMyLocation;
-    console.log(coordinateOne, getMyLocation);
-    solveDistance(coordinateOne, coordinateTwo);
-    console.log(solveDistance);
-    res.json(solveDistance);
+    const coordinateTwo = await getMyLocation();
+    console.log(coordinateOne, coordinateTwo);
+    const response = await solveDistance(coordinateOne, coordinateTwo);
+    console.log(response + 'm');
+    res.json(response + 'm');
 
 };
 
@@ -58,7 +57,7 @@ function editLocation(req, res){
 function getAllLocation(req, res){
     registerModel.find((error, user)=>{
         if(error)console.log(error);
-        res.json({user});
+        res.json(user);
     })
 
 };
@@ -67,7 +66,7 @@ function specificLocation(req, res){
     const userId = req.params.id;
     registerModel.findById(userId, (error, user)=>{
         if(error)console.log(error);
-        res.json({user});
+        res.json(user);
     });
 };
 
