@@ -1,0 +1,17 @@
+GET http://localhost:3000/location
+Content-Type: application/json
+
+# {
+#     "locationName": "Ieja",
+#     "description": "alog Obafemi Awolowo way",
+#     "phone": "0816805694",
+#     "contactPerson": "Olawal",
+#     "clientCoordinate": {
+#         "x": 500,
+#         "y": 201
+#     } 
+
+# }
+
+# 62b42e65203238e4d1f11659
+# 62b44639d33150c84c48f9ab
